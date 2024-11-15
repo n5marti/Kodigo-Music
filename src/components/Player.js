@@ -1,5 +1,6 @@
 // src/components/Player.js
 import React, { useState } from 'react';
+import './Player.css';
 
 const Player = () => {
   const [currentSong, setCurrentSong] = useState(null);
@@ -10,12 +11,12 @@ const Player = () => {
   };
 
   return (
-    <div>
+    <div className="player">
       <button onClick={() => playSong({ title: 'Canción de ejemplo', artist: 'Artista de ejemplo' })}>
         Reproducir Canción
       </button>
       {currentSong && (
-        <div>
+        <div className="song-info">
           <p>Reproduciendo: {currentSong.title} - {currentSong.artist}</p>
           <button onClick={() => setCurrentSong(null)}>Detener</button>
         </div>
